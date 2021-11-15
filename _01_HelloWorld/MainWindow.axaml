@@ -5,5 +5,14 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="_01_HelloWorld.MainWindow"
         Title="_01_HelloWorld">
-    Welcome to Avalonia!
+    
+    <!-- Welcome to Avalonia! -->
+
+    <StackPanel Margin="10">
+        <TextBox Name="textPsw"     PasswordChar="*" Watermark="Password"/>
+        <TextBox Name="textConfPws" PasswordChar="*" Watermark="Confirm Password"/>
+
+        <Button  Name="buttonCheck" Click="button_Click">Check password</Button>
+    </StackPanel>
+
 </Window>
