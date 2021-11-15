@@ -10,7 +10,9 @@ namespace _01_HelloWorld
     {
         private TextBox textPsw1;
         private TextBox textPsw2;
+        private TextBlock labelMsg;
         private bool regexMach = false;
+        private string stringVar ="";
 
         
 
@@ -23,7 +25,8 @@ namespace _01_HelloWorld
 
             textPsw1 = this.FindControl<TextBox>("textPsw");
             textPsw2 = this.FindControl<TextBox>("textConfPws");
-
+            labelMsg = this.FindControl<TextBlock>("label");
+ 
 
 #if DEBUG
             this.AttachDevTools();
@@ -53,10 +56,29 @@ namespace _01_HelloWorld
                         {
                             var messageBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager.GetMessageBoxStandardWindow("Success", "Password has been validated :)");
                             messageBoxStandardWindow.Show();
+                            labelMsg.Text = "";
+                            textPsw1.Text = "";
+                            textPsw2.Text = "";
+                        }
+                        else
+                        {
+                            labelMsg.Text = "psw must containt at least one special character";
                         }
                     }
+                    else
+                    {
+                        labelMsg.Text = "psw must containt at least one capital latter character";
+                    }
+                }
+                else
+                {
+                    labelMsg.Text = "psw must containt at least one lower latter character";
                 }
  
+            }
+            else
+            {
+                labelMsg.Text = "psw are not the same";
             }
             
         }

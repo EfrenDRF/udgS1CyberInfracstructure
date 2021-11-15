@@ -11,8 +11,8 @@
     <StackPanel Margin="10">
         <TextBox Name="textPsw"     PasswordChar="*" Watermark="Password"/>
         <TextBox Name="textConfPws" PasswordChar="*" Watermark="Confirm Password"/>
-
         <Button  Name="buttonCheck" Click="button_Click">Check password</Button>
+        <TextBlock Name="label"/>
     </StackPanel>
 
 </Window>
