@@ -11,10 +11,7 @@ namespace _01_HelloWorld
         private TextBox textPsw1;
         private TextBox textPsw2;
         private TextBlock labelMsg;
-        private bool regexMach = false;
-        private string stringVar ="";
-
-        
+        private bool regexMach = false;      
 
 
 
