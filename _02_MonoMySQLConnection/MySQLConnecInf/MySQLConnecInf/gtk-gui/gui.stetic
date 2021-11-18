@@ -28,7 +28,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="textPort">
+          <widget class="Gtk.Entry" id="txtPort">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>

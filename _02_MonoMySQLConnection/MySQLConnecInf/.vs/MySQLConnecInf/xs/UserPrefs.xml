@@ -1,22 +1,30 @@
 ﻿<Properties StartupConfiguration="{CB0C12BE-40C3-40B2-96FC-A132869F688C}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="MySQLConnecInf/MainWindow.cs">
     <Files>
-      <File FileName="MySQLConnecInf/Program.cs" Line="1" Column="1" />
-      <File FileName="MySQLConnecInf/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="MySQLConnecInf/Program.cs" Line="6" Column="13" />
+      <File FileName="MySQLConnecInf/MainWindow.cs" Line="8" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MySQLConnecInf" expanded="True">
             <Node name="MySQLConnecInf" expanded="True">
-              <Node name="MainWindow.cs" selected="True" />
+              <Node name="References" expanded="True" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="MySQLConnecInf" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.MySQLConnecInf FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.MySQLConnecInf PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

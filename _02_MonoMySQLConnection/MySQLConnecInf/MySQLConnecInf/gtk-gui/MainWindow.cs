@@ -7,7 +7,7 @@ public partial class MainWindow
 
 	private global::Gtk.Entry txtHost;
 
-	private global::Gtk.Entry textPort;
+	private global::Gtk.Entry txtPort;
 
 	private global::Gtk.Entry txtDb;
 
@@ -49,13 +49,13 @@ public partial class MainWindow
 		w1.X = 197;
 		w1.Y = 79;
 		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.textPort = new global::Gtk.Entry();
-		this.textPort.CanFocus = true;
-		this.textPort.Name = "textPort";
-		this.textPort.IsEditable = true;
-		this.textPort.InvisibleChar = '•';
-		this.fixed1.Add(this.textPort);
-		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.textPort]));
+		this.txtPort = new global::Gtk.Entry();
+		this.txtPort.CanFocus = true;
+		this.txtPort.Name = "txtPort";
+		this.txtPort.IsEditable = true;
+		this.txtPort.InvisibleChar = '•';
+		this.fixed1.Add(this.txtPort);
+		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtPort]));
 		w2.X = 199;
 		w2.Y = 126;
 		// Container child fixed1.Gtk.Fixed+FixedChild
