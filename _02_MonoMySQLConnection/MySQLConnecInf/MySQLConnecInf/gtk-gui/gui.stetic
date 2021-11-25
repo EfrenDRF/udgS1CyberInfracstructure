@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/MySQLConnecInf.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="412 424">
+  <widget class="Gtk.Window" id="MainWindow" design-size="296 424">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -23,7 +23,7 @@
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">197</property>
+            <property name="X">100</property>
             <property name="Y">79</property>
           </packing>
         </child>
@@ -33,9 +33,10 @@
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
+            <signal name="TextInserted" handler="OnTxtPortTextInserted" />
           </widget>
           <packing>
-            <property name="X">199</property>
+            <property name="X">100</property>
             <property name="Y">126</property>
           </packing>
         </child>
@@ -47,7 +48,7 @@
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">200</property>
+            <property name="X">100</property>
             <property name="Y">180</property>
           </packing>
         </child>
@@ -59,7 +60,7 @@
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">200</property>
+            <property name="X">100</property>
             <property name="Y">244</property>
           </packing>
         </child>
@@ -68,10 +69,11 @@
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
+            <property name="Visibility">False</property>
             <property name="InvisibleChar">•</property>
           </widget>
           <packing>
-            <property name="X">202</property>
+            <property name="X">100</property>
             <property name="Y">311</property>
           </packing>
         </child>
@@ -81,17 +83,18 @@
             <property name="LabelProp" translatable="yes">Database:</property>
           </widget>
           <packing>
-            <property name="X">130</property>
+            <property name="X">20</property>
             <property name="Y">184</property>
           </packing>
         </child>
         <child>
           <widget class="Gtk.Label" id="label1">
             <property name="MemberName" />
+            <property name="Xalign">0</property>
             <property name="LabelProp" translatable="yes">Server:</property>
           </widget>
           <packing>
-            <property name="X">135</property>
+            <property name="X">20</property>
             <property name="Y">87</property>
           </packing>
         </child>
@@ -101,7 +104,7 @@
             <property name="LabelProp" translatable="yes">Port:</property>
           </widget>
           <packing>
-            <property name="X">136</property>
+            <property name="X">20</property>
             <property name="Y">130</property>
           </packing>
         </child>
@@ -111,7 +114,7 @@
             <property name="LabelProp" translatable="yes">Password:</property>
           </widget>
           <packing>
-            <property name="X">127</property>
+            <property name="X">20</property>
             <property name="Y">319</property>
           </packing>
         </child>
@@ -121,7 +124,7 @@
             <property name="LabelProp" translatable="yes">User:</property>
           </widget>
           <packing>
-            <property name="X">133</property>
+            <property name="X">20</property>
             <property name="Y">252</property>
           </packing>
         </child>
@@ -135,8 +138,18 @@
             <signal name="Clicked" handler="btn_TestConnection_Click" />
           </widget>
           <packing>
-            <property name="X">253</property>
-            <property name="Y">365</property>
+            <property name="X">153</property>
+            <property name="Y">367</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label6">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">MySQL database connection</property>
+          </widget>
+          <packing>
+            <property name="X">35</property>
+            <property name="Y">32</property>
           </packing>
         </child>
       </widget>

@@ -27,6 +27,8 @@ public partial class MainWindow
 
 	private global::Gtk.Button button3;
 
+	private global::Gtk.Label label6;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -46,7 +48,7 @@ public partial class MainWindow
 		this.txtHost.InvisibleChar = '•';
 		this.fixed1.Add(this.txtHost);
 		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtHost]));
-		w1.X = 197;
+		w1.X = 100;
 		w1.Y = 79;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.txtPort = new global::Gtk.Entry();
@@ -56,7 +58,7 @@ public partial class MainWindow
 		this.txtPort.InvisibleChar = '•';
 		this.fixed1.Add(this.txtPort);
 		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtPort]));
-		w2.X = 199;
+		w2.X = 100;
 		w2.Y = 126;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.txtDb = new global::Gtk.Entry();
@@ -66,7 +68,7 @@ public partial class MainWindow
 		this.txtDb.InvisibleChar = '•';
 		this.fixed1.Add(this.txtDb);
 		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtDb]));
-		w3.X = 200;
+		w3.X = 100;
 		w3.Y = 180;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.txtUser = new global::Gtk.Entry();
@@ -76,17 +78,18 @@ public partial class MainWindow
 		this.txtUser.InvisibleChar = '•';
 		this.fixed1.Add(this.txtUser);
 		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtUser]));
-		w4.X = 200;
+		w4.X = 100;
 		w4.Y = 244;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.txtPassword = new global::Gtk.Entry();
 		this.txtPassword.CanFocus = true;
 		this.txtPassword.Name = "txtPassword";
 		this.txtPassword.IsEditable = true;
+		this.txtPassword.Visibility = false;
 		this.txtPassword.InvisibleChar = '•';
 		this.fixed1.Add(this.txtPassword);
 		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.txtPassword]));
-		w5.X = 202;
+		w5.X = 100;
 		w5.Y = 311;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label3 = new global::Gtk.Label();
@@ -94,15 +97,16 @@ public partial class MainWindow
 		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Database:");
 		this.fixed1.Add(this.label3);
 		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label3]));
-		w6.X = 130;
+		w6.X = 20;
 		w6.Y = 184;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label1 = new global::Gtk.Label();
 		this.label1.Name = "label1";
+		this.label1.Xalign = 0F;
 		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Server:");
 		this.fixed1.Add(this.label1);
 		global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-		w7.X = 135;
+		w7.X = 20;
 		w7.Y = 87;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label2 = new global::Gtk.Label();
@@ -110,7 +114,7 @@ public partial class MainWindow
 		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Port:");
 		this.fixed1.Add(this.label2);
 		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
-		w8.X = 136;
+		w8.X = 20;
 		w8.Y = 130;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label5 = new global::Gtk.Label();
@@ -118,7 +122,7 @@ public partial class MainWindow
 		this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Password:");
 		this.fixed1.Add(this.label5);
 		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label5]));
-		w9.X = 127;
+		w9.X = 20;
 		w9.Y = 319;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label4 = new global::Gtk.Label();
@@ -126,7 +130,7 @@ public partial class MainWindow
 		this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("User:");
 		this.fixed1.Add(this.label4);
 		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label4]));
-		w10.X = 133;
+		w10.X = 20;
 		w10.Y = 252;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.button3 = new global::Gtk.Button();
@@ -136,17 +140,26 @@ public partial class MainWindow
 		this.button3.Label = global::Mono.Unix.Catalog.GetString("Test Connection");
 		this.fixed1.Add(this.button3);
 		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button3]));
-		w11.X = 253;
-		w11.Y = 365;
+		w11.X = 153;
+		w11.Y = 367;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label6 = new global::Gtk.Label();
+		this.label6.Name = "label6";
+		this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("MySQL database connection");
+		this.fixed1.Add(this.label6);
+		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label6]));
+		w12.X = 35;
+		w12.Y = 32;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
 			this.Child.ShowAll();
 		}
-		this.DefaultWidth = 412;
+		this.DefaultWidth = 296;
 		this.DefaultHeight = 424;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
+		this.txtPort.TextInserted += new global::Gtk.TextInsertedHandler(this.OnTxtPortTextInserted);
 		this.button3.Clicked += new global::System.EventHandler(this.btn_TestConnection_Click);
 	}
 }

@@ -63,4 +63,30 @@ public partial class MainWindow : Gtk.Window
         }
              
     }
+
+    protected void OnTxtPortTextInserted(object o, TextInsertedArgs args)
+    {
+        string keyChar = args.Text;
+
+        if (char.IsDigit(keyChar[0]) == false)
+        { 
+            string tempText = txtPort.Text;
+
+            if (tempText.Length > 1)
+            {
+                // Remove the last key char input
+                txtPort.Text = tempText.Remove((tempText.Length - 1), 1);
+            }
+            else
+            {
+                // avoid end program
+                txtPort.Text = "0";
+            }
+
+            // Display a warning message
+            MessageDialog msgBox = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Please enter only numerical values!!!");
+            msgBox.Run();
+            msgBox.Destroy();
+        }
+    }
 }
