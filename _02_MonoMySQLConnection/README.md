@@ -10,14 +10,21 @@ Please see [dotnet connector](https://dev.mysql.com/doc/connector-net/en/connect
 
 ## Create a new database
 Open MySQL: mysql -u root -p
+
             CREATE DATABASE     `mydb`;
 
 
 ## GUI input data
 Server:    localhost
+
 Port:      3306 (Only numeric digits)
+
 Database:  mydb
+
 User:      root
+
 Passworld: <userPassworld>
+            
+            
 
 Once that you fill input data to the GUI clic on "Test Connection" button.
