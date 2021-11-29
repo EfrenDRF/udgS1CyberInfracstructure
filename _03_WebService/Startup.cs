@@ -17,7 +17,7 @@ namespace _03_WebService
 {
     public class Startup
     {
-        public IConfiguration Configuration {get;}
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

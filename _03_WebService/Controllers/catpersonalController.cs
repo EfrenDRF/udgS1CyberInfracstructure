@@ -6,10 +6,10 @@ using System.Collections.Generic;
 namespace _03_WebService.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
 
     public class catpersonalController : ControllerBase
     {
-
         private readonly IDataAccessProvider _dataAccessProvider;
 
         public catpersonalController(IDataAccessProvider dataAccessProvider)
@@ -18,9 +18,60 @@ namespace _03_WebService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<catpersonal> Get()
+        public IActionResult Get()
         {
-            return _dataAccessProvider.GetPersonal();
+            return Ok(_dataAccessProvider.GetAllCatPersonal());
         }
+
+
+        [HttpGet("{id}")]
+        public IActionResult GetCatPersonalDetails(int id)
+        {
+            return Ok(_dataAccessProvider.GetCatPersonalDetails(id));
+        }
+
+        [HttpPost]
+        public IActionResult CreatePersonal([FromBody] catpersonal catPerson)
+        {
+            if (catPerson == null)
+            {
+                return BadRequest();
+            }
+            else if (ModelState.IsValid == false)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                var created = _dataAccessProvider.InsertCatPersonal(catPerson);
+                return Created("Created", created);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult UpdateCatPersonal([FromBody] catpersonal catPerson)
+        {
+            if (catPerson == null)
+            {
+                return BadRequest();
+            }
+            else if (ModelState.IsValid == false)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                _dataAccessProvider.UpdateCatPersonal(catPerson);
+                return NoContent();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCatPersonal(int id)
+        {
+            _dataAccessProvider.DeleteCatPersonal(new catpersonal {Id = id});
+            return NoContent();
+        }
+
     }
 }

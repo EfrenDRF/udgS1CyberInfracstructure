@@ -8,6 +8,13 @@ namespace _03_WebService.DataAcces
 
     public interface IDataAccessProvider
     {
-        List<catpersonal> GetPersonal();
+        List<catpersonal> GetAllCatPersonal();
+        
+        catpersonal       GetCatPersonalDetails(int id);
+
+        bool              InsertCatPersonal(catpersonal catPerson);
+
+        bool              UpdateCatPersonal(catpersonal catPerson);
+        bool              DeleteCatPersonal(catpersonal catPerson);
     }
 }

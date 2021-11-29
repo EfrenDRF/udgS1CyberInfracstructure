@@ -11,6 +11,8 @@ dotnet new web -o _03_WebService
 
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 3.1.3
 
+## Build
+dotnet build
 
 ## Publish
 
