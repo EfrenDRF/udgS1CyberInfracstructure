@@ -16,26 +16,26 @@ namespace _03_WebService.DataAcces
             _context = context;
         }
 
-        public List<CatPersonal> GetAllCatPersonal()
+        public List<CatPersonal> GetAllCatPersonalRecords()
         {
             return _context.catpesonales.ToList();
         }
 
-        public CatPersonal GetCatPersonalDetails(int id)
+        public CatPersonal GetCatPersonalRecord(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool InsertCatPersonal(CatPersonal catPerson)
+        public bool InsertCatPersonalRecord(CatPersonal catPerson)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateCatPersonal(CatPersonal catPerson)
+        public bool UpdateCatPersonalRecord(CatPersonal catPerson)
         {
             throw new NotImplementedException();
         }
-        public bool DeleteCatPersonal(CatPersonal catPerson)
+        public bool DeleteCatPersonalRecord(CatPersonal catPerson)
         {
             throw new NotImplementedException();
         }

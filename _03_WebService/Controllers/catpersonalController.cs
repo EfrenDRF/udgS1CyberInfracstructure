@@ -18,20 +18,20 @@ namespace _03_WebService.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetAllCatPersonal()
         {
-            return Ok(_dataAccessProvider.GetAllCatPersonal());
+            return Ok(_dataAccessProvider.GetAllCatPersonalRecords());
         }
 
 
         [HttpGet("{id}")]
-        public IActionResult GetCatPersonalDetails(int id)
+        public IActionResult GetCatPersonal(int id)
         {
-            return Ok(_dataAccessProvider.GetCatPersonalDetails(id));
+            return Ok(_dataAccessProvider.GetCatPersonalRecord(id));
         }
 
         [HttpPost]
-        public IActionResult CreatePersonal([FromBody] CatPersonal catPerson)
+        public IActionResult CreateCatPersonal([FromBody] CatPersonal catPerson)
         {
             if (catPerson == null)
             {
@@ -43,7 +43,7 @@ namespace _03_WebService.Controllers
             }
             else
             {
-                var created = _dataAccessProvider.InsertCatPersonal(catPerson);
+                var created = _dataAccessProvider.InsertCatPersonalRecord(catPerson);
                 return Created("Created", created);
             }
         }
@@ -61,7 +61,7 @@ namespace _03_WebService.Controllers
             }
             else
             {
-                _dataAccessProvider.UpdateCatPersonal(catPerson);
+                _dataAccessProvider.UpdateCatPersonalRecord(catPerson);
                 return NoContent();
             }
         }
@@ -69,7 +69,7 @@ namespace _03_WebService.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteCatPersonal(int id)
         {
-            _dataAccessProvider.DeleteCatPersonal(new CatPersonal {Id = id});
+            _dataAccessProvider.DeleteCatPersonalRecord(new CatPersonal {Id = id});
             return NoContent();
         }
 

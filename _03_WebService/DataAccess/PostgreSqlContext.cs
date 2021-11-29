@@ -9,8 +9,8 @@ namespace _03_WebService.DataAcces
         public DbSet<CatPersonal> catpesonales { get; set; }
         public PostgreSqlContext(DbContextOptions<PostgreSqlContext> options) : base(options)
         {
-
         }
+
         public override int SaveChanges()
         {
             ChangeTracker.DetectChanges();
