@@ -23,21 +23,25 @@ namespace _03_WebService.DataAcces
 
         public CatPersonal GetCatPersonalRecord(int id)
         {
-            throw new NotImplementedException();
+            return _context.catpesonales.FirstOrDefault(t => t.Id == id);
         }
 
-        public bool InsertCatPersonalRecord(CatPersonal catPerson)
+        public void InsertCatPersonalRecord(CatPersonal catPerson)
         {
-            throw new NotImplementedException();
+            _context.catpesonales.Add(catPerson);  
+            _context.SaveChanges(); 
         }
 
-        public bool UpdateCatPersonalRecord(CatPersonal catPerson)
+        public void UpdateCatPersonalRecord(CatPersonal catPerson)
         {
-            throw new NotImplementedException();
+            _context.catpesonales.Update(catPerson);  
+            _context.SaveChanges(); 
         }
-        public bool DeleteCatPersonalRecord(CatPersonal catPerson)
+        public void DeleteCatPersonalRecord(int id)
         {
-            throw new NotImplementedException();
+            var entity = _context.catpesonales.FirstOrDefault(t => t.Id == id);  
+            _context.catpesonales.Remove(entity);  
+            _context.SaveChanges();  
         }
     }
 }

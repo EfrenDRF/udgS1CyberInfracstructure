@@ -12,9 +12,9 @@ namespace _03_WebService.DataAcces
         
         CatPersonal       GetCatPersonalRecord(int id);
 
-        bool              InsertCatPersonalRecord(CatPersonal catPerson);
+        void              InsertCatPersonalRecord(CatPersonal catPerson);
 
-        bool              UpdateCatPersonalRecord(CatPersonal catPerson);
-        bool              DeleteCatPersonalRecord(CatPersonal catPerson);
+        void              UpdateCatPersonalRecord(CatPersonal catPerson);
+        void              DeleteCatPersonalRecord(int id);
     }
 }

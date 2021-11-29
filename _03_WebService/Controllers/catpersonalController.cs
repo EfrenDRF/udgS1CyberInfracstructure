@@ -18,20 +18,20 @@ namespace _03_WebService.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllCatPersonal()
+        public IActionResult Get()
         {
             return Ok(_dataAccessProvider.GetAllCatPersonalRecords());
         }
 
 
         [HttpGet("{id}")]
-        public IActionResult GetCatPersonal(int id)
+        public IActionResult GetRecord(int id)
         {
             return Ok(_dataAccessProvider.GetCatPersonalRecord(id));
         }
 
         [HttpPost]
-        public IActionResult CreateCatPersonal([FromBody] CatPersonal catPerson)
+        public IActionResult Create([FromBody] CatPersonal catPerson)
         {
             if (catPerson == null)
             {
@@ -43,13 +43,13 @@ namespace _03_WebService.Controllers
             }
             else
             {
-                var created = _dataAccessProvider.InsertCatPersonalRecord(catPerson);
-                return Created("Created", created);
+                _dataAccessProvider.InsertCatPersonalRecord(catPerson);
+                return Ok();
             }
         }
 
         [HttpPut]
-        public IActionResult UpdateCatPersonal([FromBody] CatPersonal catPerson)
+        public IActionResult Update([FromBody] CatPersonal catPerson)
         {
             if (catPerson == null)
             {
@@ -62,15 +62,24 @@ namespace _03_WebService.Controllers
             else
             {
                 _dataAccessProvider.UpdateCatPersonalRecord(catPerson);
-                return NoContent();
+                return Ok();
             }
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteCatPersonal(int id)
+        public IActionResult Delete(int id)
         {
-            _dataAccessProvider.DeleteCatPersonalRecord(new CatPersonal {Id = id});
-            return NoContent();
+            var record = _dataAccessProvider.GetCatPersonalRecord(id);
+
+            if (record == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _dataAccessProvider.DeleteCatPersonalRecord(id);
+                return Ok();
+            }
         }
 
     }
