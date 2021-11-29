@@ -31,7 +31,7 @@ namespace _03_WebService.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePersonal([FromBody] catpersonal catPerson)
+        public IActionResult CreatePersonal([FromBody] CatPersonal catPerson)
         {
             if (catPerson == null)
             {
@@ -49,7 +49,7 @@ namespace _03_WebService.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateCatPersonal([FromBody] catpersonal catPerson)
+        public IActionResult UpdateCatPersonal([FromBody] CatPersonal catPerson)
         {
             if (catPerson == null)
             {
@@ -69,7 +69,7 @@ namespace _03_WebService.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteCatPersonal(int id)
         {
-            _dataAccessProvider.DeleteCatPersonal(new catpersonal {Id = id});
+            _dataAccessProvider.DeleteCatPersonal(new CatPersonal {Id = id});
             return NoContent();
         }
 

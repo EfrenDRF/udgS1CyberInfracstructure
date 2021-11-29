@@ -1,6 +1,6 @@
 namespace _03_WebService.Models
 {
-    public class catpersonal
+    public class CatPersonal
     {
         /// <summary>
         /// Efren 
