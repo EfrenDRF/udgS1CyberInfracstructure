@@ -18,29 +18,29 @@ namespace _03_WebService.DataAcces
 
         public List<CatPersonal> GetAllCatPersonalRecords()
         {
-            return _context.catpesonales.ToList();
+            return _context.catpersonal.ToList();
         }
 
         public CatPersonal GetCatPersonalRecord(int id)
         {
-            return _context.catpesonales.FirstOrDefault(t => t.Id == id);
+            return _context.catpersonal.FirstOrDefault(t => t.id == id);
         }
 
         public void InsertCatPersonalRecord(CatPersonal catPerson)
         {
-            _context.catpesonales.Add(catPerson);  
+            _context.catpersonal.Add(catPerson);  
             _context.SaveChanges(); 
         }
 
         public void UpdateCatPersonalRecord(CatPersonal catPerson)
         {
-            _context.catpesonales.Update(catPerson);  
+            _context.catpersonal.Update(catPerson);  
             _context.SaveChanges(); 
         }
         public void DeleteCatPersonalRecord(int id)
         {
-            var entity = _context.catpesonales.FirstOrDefault(t => t.Id == id);  
-            _context.catpesonales.Remove(entity);  
+            var entity = _context.catpersonal.FirstOrDefault(t => t.id == id);  
+            _context.catpersonal.Remove(entity);  
             _context.SaveChanges();  
         }
     }

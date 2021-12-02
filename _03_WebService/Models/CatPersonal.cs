@@ -9,8 +9,8 @@ namespace _03_WebService.Models
         /// </summary>
         /// <value>The identifier.</value>
 
-        public int    Id     { get; set; }
-        public string Nombre { get; set; }
+        public int    id     { get; set; }
+        public string nombre { get; set; }
 
     }
 }

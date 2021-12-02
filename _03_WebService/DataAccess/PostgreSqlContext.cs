@@ -6,7 +6,7 @@ namespace _03_WebService.DataAcces
 {
     public class PostgreSqlContext : DbContext
     {
-        public DbSet<CatPersonal> catpesonales { get; set; }
+        public DbSet<CatPersonal> catpersonal { get; set; }
         public PostgreSqlContext(DbContextOptions<PostgreSqlContext> options) : base(options)
         {
         }

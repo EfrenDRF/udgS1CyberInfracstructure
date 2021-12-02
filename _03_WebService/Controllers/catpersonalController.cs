@@ -18,52 +18,50 @@ namespace _03_WebService.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public ActionResult<IEnumerable<CatPersonal>> Get()
         {
             return Ok(_dataAccessProvider.GetAllCatPersonalRecords());
         }
 
 
         [HttpGet("{id}")]
-        public IActionResult GetRecord(int id)
+        public ActionResult<CatPersonal> GetRecord(int id)
         {
-            return Ok(_dataAccessProvider.GetCatPersonalRecord(id));
+            var record = _dataAccessProvider.GetCatPersonalRecord(id);
+
+            if (record == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(record);
+            }
         }
 
         [HttpPost]
         public IActionResult Create([FromBody] CatPersonal catPerson)
         {
-            if (catPerson == null)
-            {
-                return BadRequest();
-            }
-            else if (ModelState.IsValid == false)
-            {
-                return BadRequest(ModelState);
-            }
-            else
+            if (ModelState.IsValid)
             {
                 _dataAccessProvider.InsertCatPersonalRecord(catPerson);
                 return Ok();
+            }
+            else
+            {
+                return BadRequest(ModelState); 
             }
         }
 
         [HttpPut]
         public IActionResult Update([FromBody] CatPersonal catPerson)
         {
-            if (catPerson == null)
-            {
-                return BadRequest();
-            }
-            else if (ModelState.IsValid == false)
-            {
-                return BadRequest(ModelState);
-            }
-            else
-            {
+            if (ModelState.IsValid)  
+            {  
                 _dataAccessProvider.UpdateCatPersonalRecord(catPerson);
-                return Ok();
-            }
+                return Ok();  
+            }  
+            return BadRequest();  
         }
 
         [HttpDelete("{id}")]
