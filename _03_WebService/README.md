@@ -48,6 +48,7 @@ You have to change string parameters whether to your server info.
   
 ## Build
 Build project operation must be executed to be sure that there are not compiler mistakes. So, run below command:
+  
       dotnet build
 
 NOTE: Make sure to move to _03_WebSerice project directory.
